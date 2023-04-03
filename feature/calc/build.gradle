@@ -1,0 +1,9 @@
+apply from: "$rootDir/config/conventions/compose-base.gradle"
+
+android {
+    namespace 'com.example.mycalculator2.calc'
+}
+
+dependencies {
+    implementation project(":feature:home")
+}

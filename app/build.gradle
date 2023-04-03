@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 33
+    namespace "com.example.mycalculator2"
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.4"
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    defaultConfig {
+        applicationId "com.example.mycalculator2"
+        minSdk 29
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+    androidTestImplementation(Dependencies.androidX.junit)
+    androidTestImplementation(Dependencies.androidX.espresso)
+    testImplementation(Dependencies.junit)
+    implementation(Dependencies.androidX.compose.ui)
+    implementation(Dependencies.androidX.compose.tollingPreview)
+    implementation(Dependencies.androidX.compose.icons)
+    implementation(Dependencies.androidX.compose.composeNavigation)
+    implementation(Dependencies.androidX.compose.viewModel)
+    implementation(Dependencies.androidX.compose.activity)
+    implementation(Dependencies.androidX.compose.material3)
+    implementation(Dependencies.androidX.compose.uiTest)
+    implementation(Dependencies.androidX.compose.manifest)
+    implementation(Dependencies.androidX.compose.composeWindowsSize)
+}

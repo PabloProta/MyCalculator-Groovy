@@ -1,0 +1,25 @@
+apply from: "$rootDir/config/conventions/android-base-library.gradle"
+
+android {
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.4"
+    }
+
+    buildFeatures {
+        compose = true
+    }
+}
+
+dependencies {
+    implementation(Dependencies.androidX.compose.ui)
+    implementation(Dependencies.androidX.compose.tollingPreview)
+    implementation(Dependencies.androidX.compose.icons)
+    implementation(Dependencies.androidX.compose.composeNavigation)
+    implementation(Dependencies.androidX.compose.viewModel)
+    implementation(Dependencies.androidX.compose.activity)
+    implementation(Dependencies.androidX.compose.material3)
+    implementation(Dependencies.androidX.compose.uiTest)
+    implementation(Dependencies.androidX.compose.manifest)
+    implementation(Dependencies.androidX.compose.composeWindowsSize)
+}
