@@ -12,6 +12,7 @@ android {
 }
 
 dependencies {
+    implementation platform(Dependencies.androidX.compose.bom)
     implementation(Dependencies.androidX.compose.ui)
     implementation(Dependencies.androidX.compose.tollingPreview)
     implementation(Dependencies.androidX.compose.icons)
