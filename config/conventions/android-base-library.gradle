@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdk 33
@@ -20,11 +22,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '1.8'
     }
 }
 
@@ -32,5 +34,7 @@ dependencies {
 
     androidTestImplementation(Dependencies.androidX.junit)
     androidTestImplementation(Dependencies.androidX.espresso)
+    implementation(Dependencies.hilt.android)
+    kapt(Dependencies.hilt.compiler)
     testImplementation(Dependencies.junit)
 }

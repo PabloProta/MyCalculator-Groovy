@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -55,4 +57,10 @@ dependencies {
     implementation(Dependencies.androidX.compose.uiTest)
     implementation(Dependencies.androidX.compose.manifest)
     implementation(Dependencies.androidX.compose.composeWindowsSize)
+    implementation(Dependencies.hilt.android)
+    kapt(Dependencies.hilt.compiler)
+}
+
+kapt {
+    correctErrorTypes true
 }
